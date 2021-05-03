@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import { Container, Menu } from 'semantic-ui-react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Introduction from './Home/Home';
 import ROUTES from 'constants/routes';
 import Twodoku from './Sudoku/Twodoku';
