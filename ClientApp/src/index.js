@@ -7,8 +7,9 @@ import WithUser from 'contexts/WithUserProfile';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
 import './index.css';
+import { BASE_URL } from 'api/api';
 
-const socket = io('http://localhost:4000');
+const socket = io(BASE_URL);
 
 ReactDOM.render(
 	<React.StrictMode>

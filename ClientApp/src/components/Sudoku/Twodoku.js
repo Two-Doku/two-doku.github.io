@@ -7,6 +7,7 @@ import Grid from './Grid';
 import LoadingOverlay from 'components/Common/LoadingOverlay';
 import InvitationPopup from 'components/Home/InvitationPopup';
 import { isEmpty } from 'lodash';
+import { BASE_URL } from 'api/api';
 
 const Twodoku = () => {
 	const [data, setData] = useState({ puzzle: [], state: [] });
@@ -17,7 +18,7 @@ const Twodoku = () => {
 	const [socket] = useSocketContext();
 
 	useEffect(() => {
-		fetch(`http://localhost:4000/puzzle/${sessionID}`)
+		fetch(`${BASE_URL}/puzzle/${sessionID}`)
 			.then((response) => response.json())
 			.then(({ puzzle: puzzleSet, state: puzzleState }) => {
 				setData({

@@ -13,6 +13,7 @@ const io = require('socket.io')(httpServer, {
 if (process.env.NODE_ENV !== 'production') {
 	require('dotenv').config();
 }
+const PORT = process.env.PORT || 4000;
 const PUZZLES_COUNT = 1000;
 const supabase = createClient(
 	process.env.SUPABASE_URL,
@@ -68,8 +69,8 @@ const setupExpress = () => {
 		res.send({ puzzle, state });
 	});
 
-	httpServer.listen(4000, () => {
-		console.log('listening on *:4000');
+	httpServer.listen(PORT, () => {
+		console.log(`listening on *:${PORT}`);
 	});
 };
 
